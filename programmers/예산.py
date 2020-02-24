@@ -1,12 +1,13 @@
 def solution(d, budget):
     d = sorted(d)
+    length = len(d)
     
     best = 0 # 지원 가능한 부서 개수 중 최대 개수
     cnt = 0 # 지원 가능한 부서 개수
     tmp_budget = budget # 비교를 위해 budget을 할당
     
     for i in range(len(d)):
-        for j in range(i, len(d)):
+        for j in range(i, length):
             tmp_budget -= d[j]
             cnt += 1
             
@@ -26,7 +27,7 @@ def solution(d, budget):
                 break
                 
             else: # 모든 부서를 다 돌았는데도 예산이 남았을 경우
-                if j == len(d)-1:
-                    return len(d)
+                if j == length-1:
+                    return length
     
     return best
