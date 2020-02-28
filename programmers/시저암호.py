@@ -1,13 +1,49 @@
+# 제출코드
 def solution(s, n):
-    lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', # 0 - 6
-             'h', 'i', 'j', 'k', 'l', 'm', 'n', # 7 - 13
-             'o', 'p', 'q', 'r', 's', 't', 'u', # 14 - 20
-             'v', 'w', 'x', 'y', 'z'] # 21 - 25
-
-    upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', # 0 - 6 
-             'H', 'I', 'J', 'K', 'L', 'M', 'N', # 7 - 13
-             'O', 'P', 'Q', 'R', 'S', 'T', 'U', # 14 - 20
-             'V', 'W', 'X', 'Y', 'Z'] # 21 - 25
-
+    small = ','.join('abcdefghijklmnopqrstuvwxyz').split(',')
+    capital = ','.join('ABCDEFGHIJKLMNOPQRSTUVWXYZ').split(',')
+    s = ','.join(s).split(',')
+    
     for i in range(len(s)):
-        
+        if s[i] in small: # 소문자일 경우
+            if small.index(s[i]) + n <= 25:
+                s[i] = small[small.index(s[i])+n]
+            else:
+                s[i] = small[small.index(s[i])+n-26]
+
+        elif s[i] in capital:
+            if capital.index(s[i]) + n <= 25:
+                s[i] = capital[capital.index(s[i])+n]
+            else:
+                s[i] = capital[capital.index(s[i])+n-26]
+                
+        else: # 공백일 경우
+            continue
+
+    return ''.join(s)
+
+'''
+# 1차 코드
+def solution(s, n):
+    small = ','.join('abcdefghijklmnopqrstuvwxyz').split(',')
+    capital = ','.join('ABCDEFGHIJKLMNOPQRSTUVWXYZ').split(',')
+    
+    for i in range(len(s)):
+        if s[i] in small: # 소문자일 경우
+            if small.index(s[i]) + n <= 25:
+	            s = s.replace(s[i], small[small.index(s[i])+n])
+            else:
+                s = s.replace(s[i], small[small.index(s[i])+n]-26)
+
+                
+        elif s[i] in capital:
+            if capital.index(s[i]) + n <= 25:
+                s = s.replace(s[i], capital[capital.index(s[i])+n])
+            else:
+                s = s.replace(s[i], capital[capital.index(s[i])+n]-26)
+                
+        else: # 공백일 경우
+            continue
+            
+    return s
+'''
