@@ -14,6 +14,7 @@ def solution(n):
     
     return sum(lst)
 
+'''
 # 1차 코드
 def solution(n):
     lst = []
@@ -33,8 +34,7 @@ def solution(n):
     print(sum(lst))
     return sum(lst)
 
-solution(36)
-
+'''
 
 '''
 # 2차 코드
