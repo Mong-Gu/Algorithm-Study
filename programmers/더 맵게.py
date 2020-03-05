@@ -1,3 +1,6 @@
+# 이 코드들은 기록으로만 남기고 버리기로 한다. 강의 ver을 보기!!!!!!!
+
+'''
 # 3차 코드 : cnt의 위치를 바꿨음. 테스트케이스 모두 통과, 효율성테스트는 다시 또 다 실패.
 #            질문하기를 눌러봤더니 다 heapq 모듈을 이용. 제엔장... 모듈 없이는 힘들듯.ㅠㅠ
 
@@ -38,8 +41,9 @@ def solution(arr, K):
                         arr.insert(i, x)
                     else:
                         arr.append(x)
+'''
 
-
+'''
 # 2차 코드 : 갑자기 테스트 케이스 계속 몇 개 실패
 def solution(arr, K):
     if min(arr) >= K or K == 0: return 0 # 섞을 필요도 없을 경우
@@ -82,6 +86,7 @@ def solution(arr, K):
                         arr.insert(i, x)
                 
         cnt += 1
+'''
 
 '''
 # 1차 코드 : 테스트케이스는 모두 통과. 효율성 테스트는 모두 시간초과.
@@ -92,14 +97,11 @@ def solution(arr, K):
     cnt = 0
     while True:
         if min(arr) >= K:
-            print(cnt)
             return cnt
 
         arr.sort()
-        print('sort 후 ', arr)
         arr.insert(0, (arr.pop(0) + (arr.pop(0) * 2)))
         cnt += 1
-        print(arr)
 '''    
 
 
