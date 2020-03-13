@@ -36,10 +36,10 @@ def bfs1(graph, start):
 from collections import deque
 # BFS 함수 정의 (collections.deque를 활용한 내 소스코드)
 # 왜 굳이 collections의 deque를 사용한 것이냐?
-# 허민석님의 코드에서는 queue에 enqueue할 때 list의 insert메서드를 쓰는데 이는 O(K) 의 시간복잡도를 가지고 있음
-# insert를 쓰는 이유는 큐의 dequeue를 list의 pop메서드로 구현하고자 했기 때문임
+# 허민석님의 코드에서는 queue에 enqueue할 때 list의 insert메서드를 쓰는데 이는 큐에 들어가있는 값의 개수 N에 비례하는 O(N)의 시간복잡도를 가지고 있음
+# 허민석님이 insert를 쓰는 이유는 큐의 dequeue를 list의 pop메서드로 구현하고자 했기 때문임
 # 하지만 collections.deque를 쓴다면 append할 때도 O(1)의 시간복잡도를, popleft할 때도 O(1)의 시간복잡도를 가지고 있음 
-# 알고리즘 테스트 문제에서는 큐가 큰 영향을 줄 정도로 길어질 일이 없겠지만 그래도 익숙해져놓으면 좋을 것이라 판단
+# 알고리즘 테스트 문제에서는 큐가 큰 영향을 줄 정도로 길어질 일이 없겠지만, 그래도 익숙해져놓으면 좋을 것이라 판단
 
 def bfs2(graph, start):
     vertexList, edgeList = graph
