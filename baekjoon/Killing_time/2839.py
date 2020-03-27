@@ -2,13 +2,7 @@ n = int(input())
 
 if n % 5 == 0:
     print(n//5)
-
-elif n < 5:
-    if n == 3:
-        print(1)
-    else:
-        print(-1)
-
+    
 else:
     lst = []
     i = 1
