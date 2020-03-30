@@ -90,31 +90,31 @@ else:
 
 print(max(lst)-min(lst)) # 범위
 """
-# import sys
-# from collections import Counter
-# n = int(input())
-# lst = []
-# for i in range(n):
-#     x = int(sys.stdin.readline())
-#     lst.append(x)
-# lst.sort()
+import sys
+from collections import Counter
+n = int(input())
+lst = []
+for i in range(n):
+    x = int(sys.stdin.readline())
+    lst.append(x)
+lst.sort()
 
-# x = Counter(lst).most_common()
-# tmp = [x[0][0]]
-# i = 0
-# while i < len(x)-1 and x[i][1] == x[i+1][1]:
-#     tmp.append(x[i+1][0])
-#     i += 1
+x = Counter(lst).most_common()
+tmp = [x[0][0]]
+i = 0
+while i < len(x)-1 and x[i][1] == x[i+1][1]:
+    tmp.append(x[i+1][0])
+    i += 1
 
-# print('%.0f'% (sum(lst)/len(lst))) # 산술평균
-# print(lst[n//2]) # 중앙값
+print('%.0f'% (sum(lst)/len(lst))) # 산술평균
+print(lst[n//2]) # 중앙값
 
-# if len(tmp) == 1:
-#     print(tmp[0])
-# else:
-#     print(sorted(tmp)[1])
+if len(tmp) == 1:
+    print(tmp[0])
+else:
+    print(sorted(tmp)[1])
 
-# print(max(lst)-min(lst)) # 범위
+print(max(lst)-min(lst)) # 범위
 
 
 # 다른사람 중 극한의 숏코더 것을 참고했는데
