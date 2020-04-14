@@ -1,7 +1,4 @@
 s, k = map(int, input().split())
-# 합이 s인 k개의 양의 정수를 찾기
-# k <= 20, k <= s <= 100
-# output < 9223372036854775807
 
 key = s // k
 
@@ -11,13 +8,20 @@ if s % k == 0:
 else:
     result = 1
     while k != 0:
+        # print()
         if s % k != 0:
             result *= key
             s -= key
             k -= 1
-            # print(result, s, k)
+            # print('result: %3d, s: %3d, k: %3d' % (result, s, k))
+            # print('조합에 들어가는 수:', key)
         else:
+            # x = s//k
+            # K = k
             result = result * pow(s//k, k)
             k = 0
-            # print(result, s, k)
+            # s = 0
+            # print('result: %3d, s: %3d, k: %3d' % (result, s, k))
+            # print('조합에 들어가는 수: %d, 그 개수: %d' % (x, K))
+    
     print(result)
