@@ -1,28 +1,47 @@
-""" 
-망했음
-import sys, collections
+""" import sys, collections
 
-c = collections.Counter()
+s = ''
 while True:
 	try:
-		tmp = collections.Counter(sys.stdin.readline().strip())
-		c += tmp
+		s += sys.stdin.readline().strip()
+	except:
+		break
+x = collections.Counter(s).most_common()
+print(x)
+best = -1
+result = []
+for i in x:
+	if i[0] == ' ':
+		pass
+	else:
+		if i[1] >= best:
+			result.append(i[0])
+			best = i[1]
+		else:
+			break
+for i in sorted(result):
+	print(i, end='') """
+
+# Counter 쓰지 말자 . . .
+
+s = ''
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+while True:
+	try:
+		s += input()
 	except:
 		break
 
-x = c.most_common()
 best = -1
-lst = []
-for tpl in x:
-	print(tpl)
-	if tpl[0] == ' ':
-		continue
-	else:
-		if best <= tpl[1]:
-			lst.append(tpl[0])
-			best = tpl[1]
-		else:
-			break
+result = []
+for i in alphabet:
+	x = s.count(i)
+	if x > best:
+		result = [i]
+		best = x
+	elif x == best:
+		result.append(i)
+for i in result:
+	print(i, end='')
 
-for i in sorted(lst):
-	print(i, end ='') """
+# 다른게 문제가 아니고 sys.stdin.readline().strip()을 input()으로 바꿔버리니까 되네 뭐고...
