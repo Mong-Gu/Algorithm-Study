@@ -65,3 +65,35 @@ else: # 채널을 눌러야 하는 경우
         print(len(n) + min(target-int(a), int(b)-target)) """
 
     # 조졌다
+
+
+# https://hwiyong.tistory.com/232
+
+""" 
+enable_btn_set = {str(x) for x in range(11)}
+
+N = int(input())
+break_button_num = int(input())
+if(break_button_num == 0):
+    pass
+else:    
+    break_button = set(input().split())
+    enable_btn_set -= break_button
+    # 이렇게 하면 if not in ~ 이거 안 써도 된다.
+
+result = abs(N - 100)
+# 먼저 최악의 경우를 result에 저장한다. 단순히 + 혹은 - 만으로 움직인 경우임.
+
+for i in range(1000001):
+    # 일단 반복문의 범위가 100만 1이라는 것을 어떻게 생각했을까 신기하다.
+    # 지금 머리가 띵해서 그런지 왜 이런지는 상상이 가질 않는다.
+    is_enable = True
+    for div_num in str(i):
+        if(div_num not in enable_btn_set):
+            is_enable = False
+    if(is_enable):
+        result = min(result, abs(N - i) + len(str(i)))
+        # 오아. 채널을 len(str(i))번 누르고 i번에서 N까지 + 혹은 -로 움직인 횟수랑 result랑 비교했네 계속.
+        
+print(result) 
+"""
