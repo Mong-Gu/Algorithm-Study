@@ -14,6 +14,21 @@ def solution(citations):
             h -= 1
             
     return 0
+
+# 2020.07.10 다시 풀어본 것. C언어만 하다 보니 너무 python답게 못 짜겠다...
+def solution(citations):
+    citations.sort()
+    M = 0
+    for h in range(citations[-1]):
+        if h > len(citations):
+            break
+        for idx, num in enumerate(citations):
+            if h <= num and h <= len(citations) - idx:
+                M = h
+    return M
+
+
+
 '''
 # 2차 코드
 def solution(citations):
