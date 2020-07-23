@@ -1,4 +1,5 @@
 def solution(numbers):
+    # number = [3, 30, 34, 5, 9]
     numbers = [str(x) for x in numbers] # 시간 복잡도 : N
     numbers.sort(key=lambda x : (x * 4)[:4], reverse=True) # 시간 복잡도 : NlonN
     if numbers[0] == '0':

@@ -7,7 +7,7 @@ def solution(n):
             return pow(i+1, 2)
     return -1
 
-
+'''
 # 1차 코드
 import math
 
@@ -18,3 +18,5 @@ def solution(n):
     else:
         return -1
 
+'''
+print(solution(25))
